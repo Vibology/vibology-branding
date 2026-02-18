@@ -14,7 +14,7 @@ As your expert graphic designer and brand innovator, I approach Vibology's visua
 - **Express dimensionality** - Multiple systems, multiple layers, one coherent whole
 - **Radiate subtle luminosity** - Iridescence without garishness, soap bubble quality
 
-**Core Metaphor**: The dodecahedron — twelve pentagonal faces representing sacred geometry, the five-instrument integration, and the multifaceted nature of consciousness.
+**Core Metaphor**: The dodecahedron — twelve pentagonal faces representing sacred geometry, the five-instrument integration, and the multifaceted nature of consciousness. Rendered as a solid gradient-filled form: the geometry is implicit in the silhouette, revealed through the interplay of light and color rather than explicit construction lines.
 
 ---
 
@@ -22,24 +22,31 @@ As your expert graphic designer and brand innovator, I approach Vibology's visua
 
 ### Logo
 
-**Primary Mark**: Dodecahedron wireframe + "Vibology" wordmark
+**Primary Mark**: Dodecahedron symbol + "Vibology" wordmark
+
+**Tagline**: *the mythology of you* (all lowercase, set in Cabin Regular, sits beneath the wordmark)
 
 **Design Details**:
-- **Dodecahedron**: Thick visible edges, thinner dotted hidden edges (dimensional depth)
+- **Dodecahedron**: Solid gradient-filled faces as a unified flat shape — no strokes or edges. Clean geometric silhouette optimized for legibility at all sizes, including small app icons and favicons.
 - **Wordmark**: Clean, contemporary typography with dimensional letterforms
-- **Gradient**: Vertical flow — Cyan → Lavender → Pearl
-- **Scale**: 114×114 unit icon paired with wordmark at consistent proportion
+- **Gradient**: Vertical flow — Cyan → Lavender → Pearl (applied to both symbol and wordmark)
+- **Scale**: Symbol paired with wordmark at consistent proportion in `Logo/logo-header.svg`
 
 **Logo Files**:
-- `logo-iridescent.svg` - Wordmark only (primary use)
-- `icon-iridescent.svg` - Dodecahedron icon (1600×1600, apps/favicon)
-- `logo-combined.svg` - Combined mark (special applications)
+- `Logo/logo-header.svg` - Combined symbol + wordmark (primary use)
+- `Icon/icon-gradient-1600.svg` - Dodecahedron symbol (1600×1600 canvas, apps/favicon)
 - `logo.png` / `logo.pdf` - Export formats for print/compatibility
+
+**Retired / Legacy Files** (kept for reference, not for new use):
+- `logo-iridescent.svg` - Wordmark only variant
+- `icon-iridescent.svg` - Wireframe dodecahedron (replaced — poor small-size legibility)
+- `logo-combined.svg` - Old combined mark
 
 **Usage Guidelines**:
 - Minimum size: 32px height for wordmark, 24px for icon
 - Clear space: 0.5× the height of the mark on all sides
-- Always use on neutral backgrounds (white, very light gray, dark navy/black)
+- Web/print: use on neutral backgrounds (white, very light gray, dark navy/black)
+- App icon: background must be adaptive — do not lock to twilight navy; it must hold up on both light and dark system appearances (see App Icon Visual Language below)
 - Never distort, rotate, or apply filters to the logo
 
 ### Color Palette
@@ -148,6 +155,45 @@ animation: iridescent-shimmer 6s ease-in-out infinite;
 - Enhanced box-shadow with iridescent glow
 - Subtle scale transform (1.02-1.05)
 
+### App Icon Visual Language (macOS Tahoe / Liquid Glass)
+
+macOS Tahoe's **Liquid Glass** design language is a natural extension of Vibology's aesthetic — translucent material that refracts and reflects its surroundings, expressing depth through light rather than structure. The iridescent gradient identity is directly compatible.
+
+**Visual Layering**
+
+App icons in Tahoe are designed as layered compositions, not single flat images. Think of it as two distinct visual planes:
+
+- **Background plane**: The ambient field the symbol inhabits. Should be visually neutral relative to the symbol — it anchors the composition without competing. Must work on both light and dark system backgrounds; twilight navy is appropriate for dark contexts but should not be the only option.
+- **Foreground plane**: The dodecahedron gradient silhouette. This is the brand mark — clean, solid, gradient-filled. The foreground carries the identity.
+
+**Specular Highlights**
+
+In the app icon context, subtle specular highlights on the foreground symbol are appropriate and consistent with the brand. They express the "light through a prism" metaphor physically — the symbol catches light the way a soap bubble or pearl nacre does. This is distinct from the artificial 3D gloss of the old wireframe icon. The distinction:
+
+- **Appropriate**: Soft, diffuse highlight at top of the symbol suggesting a light source above — feels like the gradient is luminous
+- **Not appropriate**: Hard specular glints, face-by-face shading, edge bevels, or anything that implies a 3D model
+
+**Appearance Mode Design Considerations**
+
+The icon must read clearly across six visual contexts the system applies:
+
+| Mode | Visual Character | Key Consideration |
+|------|-----------------|-------------------|
+| Default | Standard appearance | Primary design target |
+| Dark | Deeper, richer | Gradient should glow against darkness |
+| Clear Light | Translucent, light bg pickup | Symbol must have enough body to read on white |
+| Clear Dark | Translucent, dark bg pickup | Gradient's pearl/cyan should stay luminous |
+| Tinted Light | System hue applied | Gradient must remain recognizable under tint |
+| Tinted Dark | System hue, dark | Deep lavender anchors the form |
+
+**Design Principle**: The iridescent gradient is robust across modes because it contains both light (pearl, cyan) and mid-tone (lavender) values. Avoid designs where the symbol depends entirely on contrast against a specific background color.
+
+**On the Pearl Endpoint in Liquid Glass**
+
+The primary gradient terminates at Pearl `#E8F5FF` (near-white), which may appear to "wash out" on light backgrounds. This is intentional. In Liquid Glass, the icon foreground sits on a glass material that is itself translucent and near-white in Clear Light mode. The pearl terminus dissolving into the glass surface means the symbol behaves as though it is *made of* the same material as the glass — the dodecahedron refracts into the background rather than sitting on top of it. This is philosophically consistent with the Observatory metaphor.
+
+Do not alter the gradient to add a saturated endpoint color to solve this. Any saturated terminus (pink, lavender, deep lavender) produces a pleasant pastel gradient but destroys the iridescent quality, which depends on the luminous near-white fade. Fine-tuning the pearl fade for specific appearance modes is a layer opacity/blend mode decision made in Icon Composer, not a change to the source asset.
+
 ---
 
 ## Design Principles
@@ -167,10 +213,11 @@ animation: iridescent-shimmer 6s ease-in-out infinite;
 **Philosophy**: Vibology navigates multiple systems simultaneously. The visual language should express layers, dimensions, and depth.
 
 **Application**:
-- Dodecahedron icon shows both visible and hidden edges
+- Dodecahedron silhouette implies geometry through form and gradient, not construction lines
 - Gradient shifts create perceived depth (darker = receding, lighter = advancing)
 - Drop shadows and glows create atmospheric layering
 - Overlapping elements with transparency
+- In native app contexts: specular highlights on the symbol are appropriate — they express "light through a surface" rather than artificial 3D
 
 ### 3. Sacred Geometry Meets Contemporary Design
 
@@ -404,15 +451,15 @@ While maintaining the core iridescent identity, we can innovate in:
 ### Current Files
 
 **Logos**:
-- `logo-iridescent.svg` - Primary wordmark
-- `logo-combined.svg` - Dodecahedron + wordmark
+- `Logo/logo-header.svg` - **Primary combined mark** (symbol + wordmark, canonical)
 - `logo.svg` / `logo.png` / `logo.pdf` - Export formats
 
 **Icons**:
-- `icon-iridescent.svg` - Primary dodecahedron (1600×1600)
-- `icon-transparent.svg` - Transparent background variant
-- `icon.svg` - Base geometric version
-- `icon-new.svg` - Alternative variant
+- `Icon/icon-gradient-1600.svg` - **Primary symbol** (solid gradient dodecahedron, 1600×1600 canvas)
+- `Icon/icon-gradient-1600.png` - PNG export of primary symbol
+- `icon-transparent.svg` - Transparent background variant (legacy)
+- `icon-iridescent.svg` - Wireframe dodecahedron (legacy — replaced)
+- `icon.svg` / `icon-new.svg` - Earlier variants (legacy)
 - `icon.pxd` - Pixelmator source file
 
 **Documentation**:
